@@ -19,11 +19,11 @@ import javax.persistence.Table;
             ),
     @NamedQuery(
             name = "getEmployeesCount",
-            query = "SELECT COUNT(e) FROM Employee As e"
+            query = "SELECT COUNT(e) FROM Employee AS e"
             ),
     @NamedQuery(
             name = "checkRegisteredCode",
-            query = "SELECT e FROM Employee AS e WHERE e.code= :code"
+            query = "SELECT COUNT(e) FROM Employee AS e WHERE e.code = :code"
             ),
     @NamedQuery(
             name = "checkLoginCodeAndPassword",
@@ -37,7 +37,7 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "code", nullable = false , unique = true)
+    @Column(name = "code", nullable = false, unique = true)
     private String code;
 
     @Column(name = "name", nullable = false)
@@ -61,6 +61,7 @@ public class Employee {
     public Integer getId() {
         return id;
     }
+
     public void setId(Integer id) {
         this.id = id;
     }
@@ -121,4 +122,3 @@ public class Employee {
         this.delete_flag = delete_flag;
     }
 }
-
