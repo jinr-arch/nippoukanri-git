@@ -5,9 +5,9 @@ import java.util.List;
 
 import models.Report;
 
-public class ReportValidators {
+public class ReportValidator {
     public static List<String> validate(Report r) {
-        List<String>errors = new ArrayList<String>();
+        List<String> errors = new ArrayList<String>();
 
         String title_error = _validateTitle(r.getTitle());
         if(!title_error.equals("")) {
@@ -24,17 +24,17 @@ public class ReportValidators {
 
     private static String _validateTitle(String title) {
         if(title == null || title.equals("")) {
-            return"タイトルを入力してください。";
+            return "タイトルを入力してください。";
             }
-    return "";
+
+        return "";
     }
 
     private static String _validateContent(String content) {
         if(content == null || content.equals("")) {
-            return"内容を入力してください。";
-        }
+            return "内容を入力してください。";
+            }
 
-        return"";
-        }
+        return "";
     }
-
+}
