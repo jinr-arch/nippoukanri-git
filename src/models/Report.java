@@ -61,6 +61,10 @@ public class Report {
     @Column(name = "updated_at", nullable = false)
     private Timestamp updated_at;
 
+
+    @Column(name = "good",nullable=true)
+    private Integer good;
+
     public Integer getId() {
         return id;
     }
@@ -115,5 +119,11 @@ public class Report {
 
     public void setUpdated_at(Timestamp updated_at) {
         this.updated_at = updated_at;
+    }
+    public Integer getGood() {
+        return good;
+    }
+    public void setGood(Integer good){
+        this.good = good;
     }
 }
